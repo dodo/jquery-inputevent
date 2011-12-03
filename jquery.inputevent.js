@@ -3,6 +3,7 @@
     http://whattheheadsaid.com/projects/input-special-event
 
     (c) 2010-2011 Andy Earnshaw
+    forked by dodo (https://github.com/dodo)
     MIT license
     www.opensource.org/licenses/mit-license.php
 */
