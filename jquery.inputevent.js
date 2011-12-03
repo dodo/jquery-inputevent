@@ -47,7 +47,7 @@
                         bndCount = $.data(target, dataBnd) || 0;
 
                         if (!bndCount)
-                            target.bind(bindTo, handler);
+                            $(target).bind(bindTo, handler);
 
                         // make sure we increase the count only once for each bound ancestor
                         $.data(elem, dataDlg, true);
@@ -110,6 +110,6 @@
 
     // Setup our jQuery shorthand method
     $.fn.input = function (handler) {
-        return handler ? this.bind("txtinput", handler) : this.trigger("txtinput");
+        return handler ? $(this).bind("txtinput", handler) : this.trigger("txtinput");
     }
 })(jQuery);
