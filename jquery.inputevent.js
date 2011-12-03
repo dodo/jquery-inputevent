@@ -25,9 +25,8 @@
 
     $.event.special.txtinput = {
         setup: function(data, namespaces, handler) {
-            var triggerTimer,
+            var timer,
                 bndCount,
-                changeTimer,
                 // Get references to the element
                 elem  = this,
                 $elem = $(this),
