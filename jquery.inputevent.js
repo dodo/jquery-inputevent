@@ -1,5 +1,5 @@
 /*
-    jQuery `input` special event v1.1
+    jQuery `input` special event v1.2
     http://whattheheadsaid.com/projects/input-special-event
 
     (c) 2010-2011 Andy Earnshaw
