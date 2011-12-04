@@ -15,7 +15,11 @@
         dataDlg = "delegated.inputEvent",
         // Set up our list of events
         bindTo = [
-            "input", "textInput", "propertychange", "paste", "cut", "keydown", "drop",
+            "input", "textInput",
+            "propertychange",
+            "paste", "cut",
+            "keydown", "keyup",
+            "drop",
         ""].join(ns),
         // Events required for delegate, mostly for IE support
         dlgtTo = [ "focusin", "mouseover", "dragstart", "" ].join(ns),
