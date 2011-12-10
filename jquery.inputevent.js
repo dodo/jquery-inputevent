@@ -28,6 +28,12 @@
         // Events that fire before input value is updated
         delay = { paste:udf, cut:udf, keydown:udf, drop:udf, textInput:udf };
 
+    // this checks if the tag is supported or has the contentEditable property
+    function isSupported(elem) {
+        return $(elem).prop('contenteditable') == "true" ||
+                 elem.tagName in supported;
+    };
+
     $.event.special.txtinput = {
         setup: function(data, namespaces, handler) {
             var timer,
@@ -37,7 +43,7 @@
                 $elem = $(this),
                 triggered = false;
 
-            if (elem.tagName in supported) {
+            if (isSupported(elem)) {
                 bndCount = $.data(elem, dataBnd) || 0;
 
                 if (!bndCount)
@@ -48,7 +54,7 @@
             } else {
                 $elem.bind(dlgtTo, function (e) {
                     var target = e.target;
-                    if (target.tagName in supported && !$.data(elem, dataDlg)) {
+                    if (isSupported(target) && !$.data(elem, dataDlg)) {
                         bndCount = $.data(target, dataBnd) || 0;
 
                         if (!bndCount)
