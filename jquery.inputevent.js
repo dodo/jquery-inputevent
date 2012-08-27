@@ -22,7 +22,7 @@
             "drop",
         ""].join(ns),
         // Events required for delegate, mostly for IE support
-        dlgtTo = [ "focusin", "mouseover", "dragstart", "" ].join(ns),
+        dlgtTo = [ "focusin", "mouseover", "dragstart", "" ].join(ns) + bindTo,
         // Elements supporting text input, not including contentEditable
         supported = {TEXTAREA:udf, INPUT:udf},
         // Events that fire before input value is updated
@@ -57,8 +57,10 @@
                     if (isSupported(target) && !$.data(elem, dataDlg)) {
                         bndCount = $.data(target, dataBnd) || 0;
 
-                        if (!bndCount)
+                        if (!bndCount) {
                             $(target).bind(bindTo, handler);
+                            handler.apply(this, arguments);
+                        }
 
                         // make sure we increase the count only once for each bound ancestor
                         $.data(elem, dataDlg, true);
