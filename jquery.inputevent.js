@@ -35,7 +35,7 @@
     };
 
     $.event.special.txtinput = {
-        setup: function(data, namespaces, handler) {
+        setup: function(data, namespaces, handler, onChangeOnly) {
             var timer,
                 bndCount,
                 // Get references to the element
@@ -100,8 +100,9 @@
                     }
                 }
                 else {
-                    
-                    if ($.data(elem, dataVal) == elem.value && $.fn.input.settings.onChangeOnly)
+                    var change = onChangeOnly !== undefined ? onChangeOnly :
+                        $.fn.input.settings.onChangeOnly;
+                    if ($.data(elem, dataVal) == elem.value && change)
                         return;
                     
                     $(elem).trigger("txtinput");
