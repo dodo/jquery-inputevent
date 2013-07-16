@@ -100,6 +100,10 @@
                     }
                 }
                 else {
+                    
+                    if ($.data(elem, dataVal) == elem.value && $.fn.input.settings.onChangeOnly)
+                        return;
+                    
                     $(elem).trigger("txtinput");
                     $.data(elem, dataVal, elem.value);
                     triggered = true;
@@ -125,4 +129,9 @@
     $.fn.input = function (handler) {
         return handler ? $(this).bind("txtinput", handler) : this.trigger("txtinput");
     }
+    
+    $.fn.input.settings = {
+        onChangeOnly: false
+    };
+    
 })(jQuery);
