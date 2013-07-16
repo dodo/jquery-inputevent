@@ -1,6 +1,6 @@
 { "name": "jquery-inputevent"
 , "description": "Cross browser oninput event for jQuery"
-, "version": "0.1.5"
+, "version": "0.2.0"
 , "homepage": "https://github.com/dodo/jquery-inputevent"
 , "author": "Andy Earnshaw (http://whattheheadsaid.com/)"
 , "contributors": [
