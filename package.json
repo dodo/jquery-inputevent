@@ -3,7 +3,10 @@
 , "version": "0.1.5"
 , "homepage": "https://github.com/dodo/jquery-inputevent"
 , "author": "Andy Earnshaw (http://whattheheadsaid.com/)"
-, "contributor": "dodo (https://github.com/dodo)"
+, "contributors": [
+    "dodo (https://github.com/dodo)"
+,   "Eduardo Kozachek <eduard@kozachek.net>"
+  ]
 , "main": "jquery.inputevent.js"
 , "repository": {"type": "git", "url": "git://github.com/dodo/jquery-inputevent.git"}
 , "engines": {"browser": ""}
